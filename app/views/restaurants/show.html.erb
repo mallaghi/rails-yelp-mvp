@@ -2,7 +2,7 @@
 <p><strong>Reviews</strong></p>
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-  <li class="list-group-item"><%= ⭐️ * review.rating %></li>
+  <li class="list-group-item"><%= "#{("⭐" * review.rating)}" %></li>
     <li class="list-group-item"><%= review.content %></li>
   <% end %>
 </ul>
@@ -10,4 +10,6 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
 <p><%= @restaurant.category.capitalize %></p>
+<%= render :partial => "restaurants/form" %>
+
 <%= link_to "Back to all restaurants", restaurants_path %>
